@@ -46,11 +46,11 @@ export default function App() {
 }
 
 const pages = [
-  { title: "Sprecherarbeit", page: "sprecherarbeit" },
-  { title: "Coaching", page: "coaching" },
-  { title: "Sonstiges", page: "sonstige-taetigkeiten" },
-  { title: "Biografie", page: "biografie" },
-  { title: "Kontakt", page: "kontakt" },
+  { title: "Sprecherarbeit", page: "sprecherarbeit/" },
+  { title: "Coaching", page: "coaching/" },
+  { title: "Sonstiges", page: "sonstige-taetigkeiten/" },
+  { title: "Biografie", page: "biografie/" },
+  { title: "Kontakt", page: "kontakt/" },
 ];
 
 function Topbar() {
@@ -59,8 +59,13 @@ function Topbar() {
       <strong className="text-3xl">
         <NavLink
           to="/"
-          title="Zurück zum Start"
-          className={({ isActive }) => clsx(isActive && "text-red-700")}
+          title="Zum Start"
+          className={({ isActive }) =>
+            clsx(
+              "hover:text-red-700 transition-colors duration-75",
+              isActive && "text-red-700"
+            )
+          }
         >
           Hicham-Tankred Felske
         </NavLink>
