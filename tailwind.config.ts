@@ -9,7 +9,7 @@ export default {
         sans: '"Nimbus Sans", sans-serif',
       },
       colors: {
-        white: "#f0f0f0",
+        white: "#f9f9f9",
       },
     },
   },

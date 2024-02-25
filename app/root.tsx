@@ -56,7 +56,7 @@ function Topbar() {
     <div className="flex justify-between py-8 items-center">
       <strong className="text-3xl">
         <Link to="/" title="Zurück zum Start">
-          Hisham-Tankred Felske
+          Hicham-Tankred Felske
         </Link>
       </strong>
 
