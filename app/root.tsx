@@ -1,12 +1,13 @@
 import "./index.css";
 import {
-  Link,
   Links,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { clsx } from "clsx";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -56,21 +57,30 @@ function Topbar() {
   return (
     <div className="flex justify-between py-8 items-center">
       <strong className="text-3xl">
-        <Link to="/" title="Zurück zum Start">
+        <NavLink
+          to="/"
+          title="Zurück zum Start"
+          className={({ isActive }) => clsx(isActive && "text-red-700")}
+        >
           Hicham-Tankred Felske
-        </Link>
+        </NavLink>
       </strong>
 
       <nav>
         <ul className="flex gap-8 text-sm pt-1">
           {pages.map((page) => (
             <li key={page.page}>
-              <Link
+              <NavLink
                 to={`/${page.page}`}
-                className="hover:text-red-600 uppercase transition-colors duration-75"
+                className={({ isActive }) =>
+                  clsx(
+                    "hover:text-red-700 uppercase transition-colors duration-75",
+                    isActive && "text-red-700"
+                  )
+                }
               >
                 {page.title}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -81,16 +91,21 @@ function Topbar() {
 
 function Footer() {
   return (
-    <nav className="py-2 flex justify-center">
+    <nav className="py-2 flex justify-center uppercase">
       <div>
         <small className="text-sm">&copy; tankred-felske.de, 2024</small>{" "}
         &middot;{" "}
-        <Link
-          className="text-sm hover:text-red-600 transition-colors duration-75"
+        <NavLink
+          className={({ isActive }) =>
+            clsx(
+              "text-sm hover:text-red-700 transition-colors duration-75",
+              isActive && "text-red-700"
+            )
+          }
           to="/impressum"
         >
           Datenschutzerklärung & Impressum
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );
