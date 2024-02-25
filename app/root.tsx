@@ -19,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
 
-      <body className="font-sans">
+      <body className="font-sans bg-black text-white min-h-screen">
         {children}
 
         <ScrollRestoration />
@@ -31,40 +31,66 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <div>
+    <div className="max-w-[940px] mx-auto flex flex-col min-h-screen">
       <Topbar />
 
-      <Outlet />
+      <div className="grow">
+        <Outlet />
+      </div>
+
+      <Footer />
     </div>
   );
 }
 
+const pages = [
+  "Sprecherarbeit",
+  "Coaching",
+  "Sonstiges",
+  "Biografie",
+  "Kontakt",
+];
+
 function Topbar() {
   return (
-    <div className="flex justify-between">
-      <strong>
-        <Link to="/">Hisham-Tankred Felske</Link>
+    <div className="flex justify-between py-8 items-center">
+      <strong className="text-3xl">
+        <Link to="/" title="Zurück zum Start">
+          Hisham-Tankred Felske
+        </Link>
       </strong>
 
       <nav>
-        <ul className="flex">
-          <li>
-            <Link to="/sprecherarbeit">Sprecherarbeit</Link>
-          </li>
-          <li>
-            <Link to="/coaching">Coaching</Link>
-          </li>
-          <li>
-            <Link to="/sonstiges">Sonstiges</Link>
-          </li>
-          <li>
-            <Link to="/biografie">Biografie</Link>
-          </li>
-          <li>
-            <Link to="/kontakt">Kontakt</Link>
-          </li>
+        <ul className="flex gap-8 text-sm pt-1">
+          {pages.map((page) => (
+            <li key={page}>
+              <Link
+                to={`/${page.toLowerCase()}`}
+                className="hover:text-red-600 uppercase transition-colors duration-75"
+              >
+                {page}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <nav className="py-2 flex justify-center">
+      <div>
+        <small className="text-sm">&copy; tankred-felske.de, 2024</small>{" "}
+        &middot;{" "}
+        <Link
+          className="text-sm hover:text-red-600 transition-colors duration-75"
+          to="/impressum"
+        >
+          Datenschutzerklärung & Impressum
+        </Link>
+      </div>
+    </nav>
   );
 }
