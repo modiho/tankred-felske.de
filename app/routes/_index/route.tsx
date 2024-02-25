@@ -15,17 +15,24 @@ export default function Index() {
       style={{ backgroundImage: `url('${taniPic}')` }}
       className="w-full h-[719px] bg-no-repeat bg-center relative mt-4"
     >
-      <div
+      <NavLink
         id="faceRect"
-        className="absolute left-[310px] top-0 h-[376px] w-[320px] border border-white"
-      ></div>
+        to="/biografie"
+        className="absolute border border-white left-[310px] top-0 h-[376px] w-[320px] text-transparent hover:text-red-800 hover:border-red-800 focus:text-red-800 focus:border-red-800 transition-colors hover:z-10  [&>div]:hover:bg-[rgba(0,0,0,.2)] [&>div]:focus:bg-[rgba(0,0,0,.2)] text-center focus:outline-none"
+      >
+        <div className="w-full h-full p-2 transition-colors">
+          <strong className="font-bold text-2xl uppercase italic">
+            Biografie
+          </strong>
+        </div>
+      </NavLink>
 
       <NavLink
         to={"/sprecherarbeit"}
         style={{ backgroundImage: `url('${synchronPic}')` }}
-        className="w-[295px] h-[355px] bg-[-55px_0]  absolute top-[160px] left-[16px] block bg-cover bg-no-repeat "
+        className="w-[295px] border border-white h-[355px] bg-[-55px_0]  absolute top-[160px] left-[16px] block bg-cover bg-no-repeat focus:text-red-800 focus:border-red-800 hover:text-red-800 hover:border-red-800 transition-colors [&>div]:hover:bg-[rgba(0,0,0,.2)] [&>div]:focus:bg-[rgba(0,0,0,.2)] focus:outline-none"
       >
-        <div className="border border-white p-2 hover:text-red-800 hover:border-red-800 w-full h-full hover:bg-[rgba(0,0,0,.2)] transition-colors">
+        <div className="w-full h-full p-2 transition-colors">
           <div className="text-center">
             <strong className="font-bold text-2xl uppercase italic">
               Sprecherarbeit
@@ -43,11 +50,31 @@ export default function Index() {
       </NavLink>
 
       <NavLink
+        to={"/coaching"}
+        className="block border border-white bg-cover bg-no-repeat w-[285px] h-[325px] bg-[-100px_0] absolute top-[375px] left-[328px] focus:text-red-800 focus:border-red-800 hover:text-red-800 hover:border-red-800 transition-colors [&>div]:hover:bg-[rgba(0,0,0,.4)] [&>div]:focus:bg-[rgba(0,0,0,.4)] focus:outline-none"
+        style={{ backgroundImage: `url('${coachingPic}')` }}
+      >
+        <div className="h-full w-full p-2 transition-colors">
+          <div className="text-center">
+            <strong className="font-bold text-2xl uppercase italic">
+              Coaching
+            </strong>
+          </div>
+
+          <ul className="list-['\00B7'] mt-44 ml-16 text-xl indent-2">
+            <li>Monologarbeit</li>
+            <li>Schauspielunterricht</li>
+            <li>Bühnenpräsenz</li>
+          </ul>
+        </div>
+      </NavLink>
+
+      <NavLink
         to={"/sonstige-taetigkeiten"}
-        className="block bg-cover bg-no-repeat w-[280px] h-[340px] bg-[-200px_0] absolute top-[185px] left-[629px]"
+        className="block bg-cover bg-no-repeat border-white border text-black w-[280px] h-[340px] bg-[-200px_0] absolute top-[185px] focus:text-red-800 focus:border-red-800 hover:text-red-800 hover:border-red-800 left-[629px] transition-colors [&>div]:hover:bg-[rgba(0,0,0,.2)] [&>div]:focus:bg-[rgba(0,0,0,.2)] focus:outline-none"
         style={{ backgroundImage: `url('${moderationPic}')` }}
       >
-        <div className="p-2 border border-white  hover:text-red-800 hover:border-red-800 text-black h-full w-full hover:bg-[rgba(0,0,0,.3)] transition-colors">
+        <div className="h-full w-full p-2 transition-colors">
           <div className="text-center">
             <strong className="font-bold text-2xl uppercase italic">
               Sonstiges
@@ -60,26 +87,6 @@ export default function Index() {
             <li>Theater</li>
             <li>Schauspiel</li>
             <li>etc.</li>
-          </ul>
-        </div>
-      </NavLink>
-
-      <NavLink
-        to={"/coaching"}
-        className="block bg-cover bg-no-repeat w-[285px] h-[325px] bg-[-100px_0] absolute top-[375px] left-[328px]"
-        style={{ backgroundImage: `url('${coachingPic}')` }}
-      >
-        <div className="p-2 border border-white  hover:text-red-800 hover:border-red-800 h-full w-full hover:bg-[rgba(0,0,0,.4)] transition-colors">
-          <div className="text-center">
-            <strong className="font-bold text-2xl uppercase italic">
-              Coaching
-            </strong>
-          </div>
-
-          <ul className="list-['\00B7'] mt-44 ml-16 text-xl indent-2">
-            <li>Monologarbeit</li>
-            <li>Schauspielunterricht</li>
-            <li>Bühnenpräsenz</li>
           </ul>
         </div>
       </NavLink>

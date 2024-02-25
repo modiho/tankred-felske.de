@@ -62,8 +62,8 @@ function Topbar() {
           title="Zum Start"
           className={({ isActive }) =>
             clsx(
-              "hover:text-red-700 transition-colors duration-75",
-              isActive && "text-red-700"
+              "hover:text-red-800 focus:text-red-800 transition-colors duration-75",
+              isActive && "text-red-800"
             )
           }
         >
@@ -79,8 +79,8 @@ function Topbar() {
                 to={`/${page.page}`}
                 className={({ isActive }) =>
                   clsx(
-                    "hover:text-red-700 uppercase transition-colors duration-75",
-                    isActive && "text-red-700"
+                    "hover:text-red-800 focus:text-red-800 uppercase transition-colors duration-75",
+                    isActive && "text-red-800"
                   )
                 }
               >
@@ -103,8 +103,8 @@ function Footer() {
         <NavLink
           className={({ isActive }) =>
             clsx(
-              "text-sm hover:text-red-700 transition-colors duration-75",
-              isActive && "text-red-700"
+              "text-sm hover:text-red-800 focus:text-red-800 transition-colors duration-75",
+              isActive && "text-red-800"
             )
           }
           to="/impressum"
