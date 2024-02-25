@@ -16,6 +16,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
 
+        <link rel="icon" href="/favicon.svg" />
         <Links />
       </head>
 
@@ -44,11 +45,11 @@ export default function App() {
 }
 
 const pages = [
-  "Sprecherarbeit",
-  "Coaching",
-  "Sonstiges",
-  "Biografie",
-  "Kontakt",
+  { title: "Sprecherarbeit", page: "sprecherarbeit" },
+  { title: "Coaching", page: "coaching" },
+  { title: "Sonstiges", page: "sonstige-taetigkeiten" },
+  { title: "Biografie", page: "biografie" },
+  { title: "Kontakt", page: "kontakt" },
 ];
 
 function Topbar() {
@@ -63,12 +64,12 @@ function Topbar() {
       <nav>
         <ul className="flex gap-8 text-sm pt-1">
           {pages.map((page) => (
-            <li key={page}>
+            <li key={page.page}>
               <Link
-                to={`/${page.toLowerCase()}`}
+                to={`/${page.page}`}
                 className="hover:text-red-600 uppercase transition-colors duration-75"
               >
-                {page}
+                {page.title}
               </Link>
             </li>
           ))}
