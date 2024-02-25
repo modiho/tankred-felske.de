@@ -9,13 +9,11 @@ export const meta: MetaFunction = () => {
   return [{ title: "Hicham-Tankred Felske" }];
 };
 
-console.log(taniPic);
-
 export default function Index() {
   return (
     <div
       style={{ backgroundImage: `url('${taniPic}')` }}
-      className="w-full h-[719px] bg-no-repeat bg-center relative"
+      className="w-full h-[719px] bg-no-repeat bg-center relative mt-4"
     >
       <div
         id="faceRect"
