@@ -19,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
 
-      <body style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+      <body className="font-sans">
         {children}
 
         <ScrollRestoration />

@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Nimbus Sans";
+  src: url("/nimbus-sans/NimbusSanL-Reg-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nimbus Sans";
+  src: url("/nimbus-sans/NimbusSanL-RegIta-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Nimbus Sans";
+  src: url("/nimbus-sans/NimbusSanL-Bol-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nimbus Sans";
+  src: url("/nimbus-sans/NimbusSanL-BolIta-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}

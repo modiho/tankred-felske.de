@@ -4,7 +4,11 @@ import typography from "@tailwindcss/typography";
 export default {
   content: ["./app/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: '"Nimbus Sans", sans-serif',
+      },
+    },
   },
   plugins: [typography],
 };
