@@ -1,6 +1,6 @@
 import taniPic from "./Tani2018.jpg";
 import synchronPic from "./synchron.jpg";
-import coachingPic from "./coaching.png";
+import coachingPic from "./coaching-edit.jpg";
 import moderationPic from "./moderation-edit.jpg";
 import type { MetaFunction } from "@remix-run/node";
 import { NavLink } from "@remix-run/react";
@@ -24,7 +24,7 @@ export default function Index() {
 
       <NavLink
         to={"/sprecherarbeit"}
-        className="block bg-cover bg-no-repeat w-[305px] h-[355px] border border-white bg-[-55px_0] p-2 absolute top-[160px] left-[6px] hover:text-red-800 hover:border-red-800"
+        className="block bg-cover bg-no-repeat w-[295px] h-[355px] border border-white bg-[-55px_0] p-2 absolute top-[160px] left-[16px] hover:text-red-800 hover:border-red-800"
         style={{ backgroundImage: `url('${synchronPic}')` }}
       >
         <div className="text-center">
@@ -59,6 +59,24 @@ export default function Index() {
           <li>Theater</li>
           <li>Schauspiel</li>
           <li>etc.</li>
+        </ul>
+      </NavLink>
+
+      <NavLink
+        to={"/coaching"}
+        className="block bg-cover bg-no-repeat w-[285px] h-[325px] border border-white bg-[-100px_0] p-2 absolute top-[375px] left-[328px] hover:text-red-800 hover:border-red-800"
+        style={{ backgroundImage: `url('${coachingPic}')` }}
+      >
+        <div className="text-center">
+          <strong className="font-bold text-2xl uppercase italic">
+            Coaching
+          </strong>
+        </div>
+
+        <ul className="list-['\00B7'] mt-44 ml-16 text-xl indent-2">
+          <li>Monologarbeit</li>
+          <li>Schauspielunterricht</li>
+          <li>Bühnenpräsenz</li>
         </ul>
       </NavLink>
     </div>
