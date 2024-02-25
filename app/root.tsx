@@ -1,4 +1,6 @@
+import "./index.css";
 import {
+  Link,
   Links,
   Meta,
   Outlet,
@@ -8,15 +10,18 @@ import {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="de" dir="ltr">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
+
         <Links />
       </head>
-      <body>
+
+      <body style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
         {children}
+
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -25,5 +30,41 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div>
+      <Topbar />
+
+      <Outlet />
+    </div>
+  );
+}
+
+function Topbar() {
+  return (
+    <div className="flex justify-between">
+      <strong>
+        <Link to="/">Hisham-Tankred Felske</Link>
+      </strong>
+
+      <nav>
+        <ul className="flex">
+          <li>
+            <Link to="/sprecherarbeit">Sprecherarbeit</Link>
+          </li>
+          <li>
+            <Link to="/coaching">Coaching</Link>
+          </li>
+          <li>
+            <Link to="/sonstiges">Sonstiges</Link>
+          </li>
+          <li>
+            <Link to="/biografie">Biografie</Link>
+          </li>
+          <li>
+            <Link to="/kontakt">Kontakt</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
